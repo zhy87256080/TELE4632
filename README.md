@@ -4,7 +4,7 @@ Flask
 Ryu controller
 Mininet
 
-##Runing the Project
+## Runing the Project
 Flask application
 ```bash
 export FLASK_APP=flaskFinal.py
