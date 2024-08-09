@@ -20,7 +20,7 @@
                 document.getElementById('quota').innerText = `Remaining quota: ${result.quota} bytes`;
                 document.getElementById('email').value = email;
                 const devicesList = document.getElementById('devices-list');
-                devicesList.innerHTML = '';  // 清空列表
+                devicesList.innerHTML = '';  
                 result.devices.forEach(device => {
                     const li = document.createElement('li');
                     li.textContent = device;
