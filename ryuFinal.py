@@ -16,9 +16,9 @@ class HotelWifiController(app_manager.RyuApp):
     def __init__(self, *args, **kwargs):
         super(HotelWifiController, self).__init__(*args, **kwargs)
         self.mac_to_port = {}
-        self.white_list = set()  # 白名单，存储允许的MAC地址
+        self.white_list = set()  
         self.account_data = {}
-        self.device_traffic = {}  # 存储设备的流量使用情况
+        self.device_traffic = {}  
         wsgi = kwargs['wsgi']
         wsgi.register(WhitelistController, {'hotel_wifi_app': self})
 
@@ -67,9 +67,9 @@ class HotelWifiController(app_manager.RyuApp):
 
         self.mac_to_port[dpid][src] = in_port
 
-        # 检查是否在白名单中
+        
         if src in self.white_list:
-            # 更新设备流量使用情况
+            
             self.device_traffic[src] = self.device_traffic.get(src, 0) + len(msg.data)
             self.logger.info("Device %s used %d bytes", src, self.device_traffic[src])
 
